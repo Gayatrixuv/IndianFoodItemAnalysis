@@ -2,6 +2,7 @@
 this project is for indian food items
 build on python with django framework
 using python libraries
+such as pandad, matplotlib, seaborn, etc
 
 
 
