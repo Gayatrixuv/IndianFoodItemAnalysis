@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <a class="navbar-brand" href="{% url 'index' %}">Indian Food Items</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+  <div class="container-fluid">
+      <div class="row">
+
+          <div class="col-2 bg-secondary m-0 p-0" style="min-height: 800px">
+{#               Left side Navbar#}
+              <div class="position-fixed">
+              <a class="btn btn-outline-warning btn-block pr-5" href="#StatesWise">State Wise Recipe Analysis</a>
+              <a class="btn btn-outline-warning btn-block " href="#VegNonVeg">Veg Vs Non-Veg Dishes</a>
+              <a class="btn btn-outline-warning btn-block " href="#CookTime">Recipes & Cooking Time</a>
+              <a class="btn btn-outline-warning btn-block " href="#CourseWise">Course Wise</a>
+              <a class="btn btn-outline-warning btn-block " href="#Flavour">Flavour Profile</a>
+                  <a class="btn btn-outline-warning btn-block " href="#Region">Region Profile</a>
+                  <a class="btn btn-outline-warning btn-block " href="#Ingrediants">Most Used Ingrdiants</a>
+                  </div>
+          </div>
+
+
+          <div class="col-10">
+{#              Dashboard#}
+              <div class="container">
+
+{#                  graph 1#}
+                  <div class="row">
+                      <div class="col-6">
+                       <h2 id="StatesWise">{{ graphs.graph1.Name }}</h2>
+                         <img src="data:image/png;base64,{{ graphs.graph1.Image }}" alt="" height="400" width="600">
+                  <p class="text-dark">As per our analysys we got to know that gujarat have the higrest number of recipes.
+                  As per our analysys we got to know that gujarat have the higrest number of recipes.</p>
+
+                      </div>
+
+                      <div class="col-6">
+                          <h2 class="text-center">State Wise</h2>
+                          <br>
+                          <br>
+                          <div class="row text-center">
+                              <div class="col-6 ">
+                              <a href="{% url 'statewise' state='Maharashtra' %}" class="d-block bg-success rounded text-dark">Maharashtra</a>
+                                  <a href="{% url 'statewise' state='Gujarat' %}" class="d-block bg-success rounded text-dark">Gujarat</a>
+                                  <a href="{% url 'statewise' state='Andhra Pradesh' %}" class="d-block bg-success rounded text-dark">Andhra Pradesh</a>
+                                   <a href="{% url 'statewise' state='Assam' %}" class="d-block bg-success rounded text-dark">Assam</a>
+                                   <a href="{% url 'statewise' state='Bihar' %}" class="d-block bg-success rounded text-dark">Bihar</a>
+                                   <a href="{% url 'statewise' state='Punjab' %}" class="d-block bg-success rounded text-dark">Punjab</a>
+                                   <a href="{% url 'statewise' state='Chhattisgarh' %}" class="d-block bg-success rounded text-dark">Chhattisgarh</a>
+                                   <a href="{% url 'statewise' state='Haryana' %}" class="d-block bg-success rounded text-dark">Haryana</a>
+                                   <a href="{% url 'statewise' state='Jammu & Kashmir' %}" class="d-block bg-success rounded text-dark">Jammu & Kashmir</a>
+                                   <a href="{% url 'statewise' state='Kerala' %}" class="d-block bg-success rounded text-dark">Kerala</a>
+                                   <a href="{% url 'statewise' state='Madhya Pradesh' %}" class="d-block bg-success rounded text-dark">Madhya Pradesh</a>
+                                   <a href="{% url 'statewise' state='Manipur' %}" class="d-block bg-success rounded text-dark">Manipur</a>
+                              </div>
+                              <div class="col-6">
+                                  <a href="{% url 'statewise' state='Karnataka' %}" class="d-block bg-success rounded text-dark">Karnataka</a>
+                                  <a href="{% url 'statewise' state='Tamil Nadu' %}" class="d-block bg-success rounded text-dark">Tamil Nadu</a>
+                                  <a href="{% url 'statewise' state='NCT of Delhi' %}" class="d-block bg-success rounded text-dark">NCT of Delhi</a>
+                                  <a href="{% url 'statewise' state='Goa' %}" class="d-block bg-success rounded text-dark">Goa</a>
+                                  <a href="{% url 'statewise' state='Nagaland' %}" class="d-block bg-success rounded text-dark">Nagaland</a>
+                                  <a href="{% url 'statewise' state='Odisha' %}" class="d-block bg-success rounded text-dark">Odisha</a>
+                                  <a href="{% url 'statewise' state='Rajasthan' %}" class="d-block bg-success rounded text-dark">Rajasthan</a>
+                                  <a href="{% url 'statewise' state='Telangana' %}" class="d-block bg-success rounded text-dark">GTelangana</a>
+                                  <a href="{% url 'statewise' state='Tripura' %}" class="d-block bg-success rounded text-dark">Tripura</a>
+                                   <a href="{% url 'statewise' state='Uttar Pradesh' %}" class="d-block bg-success rounded text-dark">Uttar Pradesh</a>
+                                   <a href="{% url 'statewise' state='West Bengal' %}" class="d-block bg-success rounded text-dark">West Bengal</a>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+
+{#                  Graph 2#}
+
+                         <div class="row">
+                      <div class="col-6">
+                       <h2 id="VegNonVeg">{{ graphs.graph2.Name }}</h2>
+                         <img src="data:image/png;base64,{{ graphs.graph2.Image }}" alt="" height="400" width="600">
+                  <p class="text-dark">As per our analysys we got to know that gujarat have the higrest number of recipes.
+                  As per our analysys we got to know that gujarat have the higrest number of recipes.</p>
+
+                      </div>
+
+                      <div class="col-6">
+                          <h2 class="text-center">Diet Wise</h2>
+                          <br>
+                          <br>
+                          <div>
+                                  <div class="row">
+                                      <div class="col-6 pl-5">
+                                        <h4>Vegetarian</h4>
+                                          {% for veg in Vegs %}
+                                              {{ veg.Name }}
+                                              <br>
+                                          {% endfor %}
+                                      <h6><a href="{% url 'VegNonveg' %}" >See More</a></h6>
+                                      </div>
+                                      <div class="col-6">
+                                          <h4>Non-vegetarian</h4>
+                                          {% for nonveg in Nonvegs %}
+                                              {{ nonveg.Name }}
+                                              <br>
+                                          {% endfor %}
+                                      </div>
+                                  </div>
+
+                          </div>
+                      </div>
+                      </div>
+
+                  </div>
+
+{#              End state wise#}
+
+
+
+{#                  Graph 3#}
+
+              <div class="row pl-5">
+                      <div class="col-6">
+                       <h2 id="CookTime">{{ graphs.graph3.Name }}</h2>
+                         <img src="data:image/png;base64,{{ graphs.graph3.Image }}" alt="" height="400" width="600">
+                  <p class="text-dark">Most of the dishes vegeterian as well as non-vegeterian have preparation time and cooking time between 0 to 100 minutes.
+                   Shrikhand which is a traditional Maharashtian sweet has cooking time of 720 minutes mainly because the sweet has to be kept in the refrigerator for it to set.
+                   Pindi Chana is a famous main course item in the North India which takes 500 minutes to prepare. The reason behind this is that the Chana needs to be soaked for about 7-8 hours.</p>
+
+                      </div>
+
+                                  <div class="row">
+                                      <div class="col-6 pl-5">
+                                        <h4>Quick Recipes</h4>
+                                          {% for veg in quickRecipes %}
+                                              <div class="row m-0 p-0">
+                                              <div class="col-7">
+                                                  {{ veg.Name }}
+                                              </div>
+                                                  <div class="col-5">
+                                                      {{ veg.CookTime }} min
+                                                  </div>
+
+                                              </div>
+                                              <br>
+                                          {% endfor %}
+                                      <h6><a href="{% url 'VegNonveg' %}">See More</a></h6>
+                                      </div>
+                                      <div class="col-6">
+                                          <h4>Medium Time Recipes</h4>
+                                          {% for nonveg in MediumTimeRecipes %}
+                                              <div class="row m-0 p-0">
+                                              <div class="col-7">
+                                                  {{ nonveg.Name }}
+                                              </div>
+                                                  <div class="col-5">
+                                                      {{ nonveg.CookTime }} min
+                                                  </div>
+
+                                              </div>
+                                              <br>
+                                          {% endfor %}
+                                      </div>
+                                  </div>
+
+
+            </div>
+
+{#              End of Recipes and Thier Cooking Time #}
+
+{#            Graph4 #}
+
+          <hr>
+              <div class="row pl-5" >
+              <h2 id="CourseWise">CourseWise</h2>
+              <img src="data:image/png;base64,{{ graphs.graph4.Image }}" alt="", height="400", width="800">
+              </div>
+              <hr>
+{#        End of course wise #}
+
+{#               Graph5 #}
+
+          <hr>
+               <div class="row pl-5">
+              <h2 id="Flavour">Flavour Profile</h2>
+              <img src="data:image/png;base64,{{ graphs.graph5.Image }}" alt="", height="400", width="800">
+              </div>
+{#        End of flavour profile #}
+
+{#           Graph6 #}
+              <hr>
+                <div class="row pl-5">
+              <h2 id="Region">Region Profile</h2>
+              <img src="data:image/png;base64,{{ graphs.graph6.Image }}" alt="", height="400", width="800">
+              </div>
+{#        End of Region profile #}
+
+
+{#         Graph7 #}
+               <hr>
+                <div class="row pl-2">
+              <h2 id="Ingrediants">Most Used Ingrdiants</h2>
+              <img src="data:image/png;base64,{{ graphs.graph7.Image }}" alt="", height="800", width="900">
+              </div>
+{#        End of most used ingrediants #}
+{#              <hr>#}
+{#              <div >#}
+{#              <h2 id="VegNonVeg">Veg Vs Non-Veg Dishes</h2>#}
+{#              <img src="data:image/png;base64,{{ graph2 }}" alt="", height="400", width="800">#}
+{#                  <p class="text-dark">Size of data for non-veg food is far too small compared to that for veg food. Conclusions may not be robust.#}
+{#Veg food has higher average prep time and average cook time than non-veg food. Estimates for non-veg has wide</p>#}
+{#              </div>#}
+{#              <hr>#}
+{#              <div >#}
+{#              <h2 id="CookTime">Recipes and Thier Cooking Time</h2>#}
+{#              <img src="data:image/png;base64,{{ graph3 }}" alt="", height="400", width="800">#}
+{#                  <p class="text-dark">Most of the dishes vegeterian as well as non-vegeterian have preparation time and cooking time between 0 to 100 minutes.#}
+{#Shrikhand which is a traditional Maharashtian sweet has cooking time of 720 minutes mainly because the sweet has to be kept in the refrigerator for it to set.#}
+{#Pindi Chana is a famous main course item in the North India which takes 500 minutes to prepare. The reason behind this is that the Chana needs to be soaked for about 7-8 hours.</p>#}
+{#              </div>#}
+{#               <hr>#}
+{#                <div >#}
+{#              <h2 id="time">State VS Cooking Time</h2>#}
+{#              <img src="data:image/png;base64,{{ graph7 }}" alt="", height="800", width="900">#}
+{#                    <p class="text-dark">1.Highest cooking time by states is in telangana (no-veg) dish#}
+{#                                         2.Overall non veg dishes take more time to get cooked#}
+{#                                         3.The cooking time for vegetarian dishes are relatively less while in Bihar it is an exception.</p>#}
+{#              </div>#}
+{#              <hr>#}
+{#              <div >#}
+{#              <h2 id="CourseWise">Course Wise</h2>#}
+{#              <img src="data:image/png;base64,{{ graph4 }}" alt="", height="400", width="800">#}
+{#              </div>#}
+{#              <hr>#}
+{#                <div >#}
+{#              <h2 id="Flavour">Flavour Profile</h2>#}
+{#              <img src="data:image/png;base64,{{ graph5 }}" alt="", height="400", width="800">#}
+{#              </div>#}
+{#              <hr>#}
+{#                <div >#}
+{#              <h2 id="Region">Region Profile</h2>#}
+{#              <img src="data:image/png;base64,{{ graph6 }}" alt="", height="400", width="800">#}
+{#              </div>#}
+{#               <hr>#}
+{#                <div >#}
+{#              <h2 id="Ingrediants">Most Used Ingrdiants</h2>#}
+{#              <img src="data:image/png;base64,{{ graph7 }}" alt="", height="800", width="900">#}
+{#              </div>#}
+          </div>
+      </div>
+  </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
