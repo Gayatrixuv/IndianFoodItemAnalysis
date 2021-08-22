@@ -1,3 +1,7 @@
-what a drag
-1234
+
+this project is for indian food items
+build on python with django framework
+using python libraries
+
+
 
